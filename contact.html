@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact DEVTourism for travel inquiries, booking assistance, or partnership opportunities.">
+    <title>Contact Us - DEVTourism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--HEADER-->
+    <header class="site-header" role="banner">
+        <div class="container header-content">
+            <div class="logo" aria-label="DEVTourism logo">
+                <a href="index.html">
+                    <img src="images/RLTlogo.png" alt="DEVTourism logo" class="logo-img" />
+                </a>
+            </div>
+
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="active" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </div>
+    </header>
+    <!--HERO-->
+    <section class="hero small-hero">
+        <img src="images/avion.jpg" alt="Travel contact background" class="hero-image">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1>Contact Us</h1>
+                <p>We're here to help plan your perfect journey. Reach out anytime!</p>
+            </div>
+        </div>
+    </section>
+    <!--CONTACT SECTION-->
+    <main class="container content">
+        <section class="contact-section">
+            <div class="two-col">
+                <!--Contact Form-->
+                <div class="contact-form card">
+                    <h2>Send Us a Message</h2>
+                    <p>Have a question or need travel advice? Fill out the form below and we’ll get back to you soon.
+                    </p>
+
+                    <form action="thankyou_contact.html" method="get" class="form">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Type your message here..."
+                            required></textarea>
+
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <!--Contact Information-->
+                <aside class="contact-info card nudge-right-100">
+                    <h2>Get In Touch</h2>
+                    <p><strong>📍 Address:</strong><br>Coventry,UK</p>
+                    <p><strong>📧 Email: info@devtourism.com</strong></p>
+                    <p><strong>📞 Phone:</strong><br>####</p>
+                    <p><strong>🕒 Working Hours:</strong><br>Mon - Fri: 9 AM - 6 PM<br>Sat: 10 AM - 2 PM</p>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <!--FOOTER-->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-content">
+            <div class="footer-about">
+                <h3>DEVTourism</h3>
+                <p>Connecting travelers with authentic destinations since 2026.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: info@devtourism.com</p>
+                <p>Phone: ####</p>
+                <p>Address: Coventry, UK</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy;2026 DEVTourism. All rights reserved.</p>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border: 0; width: 88px; height: 31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS">
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

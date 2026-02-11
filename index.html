@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEVTourism - Discover Your Next Adventure</title>
+  <meta name="description"
+    content="DEVTourism - Discover amazing destinations around the world with personalized travel experiences.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--HEADER-->
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">
+        <img src="images/RLTlogo.png" alt="DEVTourism - Home" class="logo-img">
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <!--HERO SECTION-->
+  <section class="hero" aria-labelledby="hero-heading">
+    <img src="images/avion.jpg" alt="Airplane flying over beautiful landscape" class="hero-image">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+      <h1 id="hero-heading">Discover the World with Us</h1>
+      <p>Find your next destination and create memories that last forever.</p>
+      <a href="destinations.html" class="btn">Start Exploring</a>
+    </div>
+  </section>
+
+  <!--MAIN CONTENT-->
+  <main class="container">
+    <!--SEARCH SECTION-->
+    <section class="plan-trip" aria-labelledby="fast-trip-heading">
+      <h2 id="fast-trip-heading">Fast Trip</h2>
+
+      <form class="search-box" action="#" method="get">
+        <div class="form-row">
+          <div class="field">
+            <label for="departure">Departure Airport</label>
+            <select name="departure" id="departure" required>
+              <option value="" disabled selected hidden>Select airport</option>
+              <option value="London Gatwick">London Gatwick</option>
+              <option value="Birmingham">Birmingham</option>
+              <option value="Manchester">Manchester</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="date">Departure Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="search-btn" formaction="3days.html">
+            3 Days Option Search
+          </button>
+          <button type="submit" class="search-btn" formaction="7days.html">
+            7 Days Option Search
+          </button>
+          <button type="submit" class="search-btn" formaction="10nights.html">
+            10+ Nights Option Search
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!--FEATURED DESTINATIONS-->
+    <section class="featured" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Popular Destinations</h2>
+      <p>Discover some of our most loved places around the world.</p>
+
+      <div class="destination-grid">
+        <article class="card">
+          <img src="images/brasovcover.jpg" alt="Brasov with mountains in the background">
+          <h3>Brasov, Romania</h3>
+          <p>Medieval charm surrounded by the beautiful Carpathian Mountains.</p>
+          <a href="brasov.html" class="btn">Explore Brasov</a>
+        </article>
+
+        <article class="card">
+          <img src="images/balicover.jpg" alt="Temple with tropical landscape">
+          <h3>Bali, Indonesia</h3>
+          <p>Experience paradise with temples, beaches, and vibrant culture.</p>
+          <a href="bali.html" class="btn">Explore Bali</a>
+        </article>
+
+        <article class="card">
+          <img src="images/Santorinicover.jpg" alt="Overlooking the sea">
+          <h3>Santorini, Greece</h3>
+          <p>Stunning sunsets, white-washed houses, and the Aegean breeze.</p>
+          <a href="santorini.html" class="btn">Explore Santorini</a>
+        </article>
+      </div>
+    </section>
+
+    <!--WHY CHOOSE SECTION-->
+    <section class="why-choose" aria-labelledby="why-choose-heading">
+      <h2 id="why-choose-heading">Why Choose <strong>DEVTourism</strong>?</h2>
+      <p>Because travel should be <strong>easy, inspiring, and truly yours</strong>. Let us handle the details — you
+        just enjoy the journey.</p>
+
+      <div class="benefits">
+        <article class="benefit">
+          <h3>Global Destinations</h3>
+          <p>Explore handpicked trips across <strong>40+ amazing locations</strong>, from tropical escapes to mountain
+            adventures.</p>
+        </article>
+
+        <article class="benefit">
+          <h3>Personalized Stays</h3>
+          <p>Stay in carefully selected hotels and enjoy authentic local experiences — tailored just for you.</p>
+        </article>
+
+        <article class="benefit">
+          <h3>Travel Support, Anytime</h3>
+          <p>Wherever you go, our team is just a message away — <strong>24/7 support</strong>, always ready to help.</p>
+        </article>
+      </div>
+
+      <a href="contact.html" class="btn">Contact Us</a>
+    </section>
+  </main>
+
+  <!--FOOTER-->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-about">
+        <h3>DEVTourism</h3>
+        <p>Connecting travelers with authentic destinations since 2026.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: info@devtourism.com</p>
+        <p>Phone: ####</p>
+        <p>Address: Coventry, UK</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy;2026 DEVTourism. All rights reserved.</p>
+      <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border: 0; width: 88px; height: 31px" src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS">
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

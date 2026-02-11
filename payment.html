@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secure Payment - DEVTourism</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/RLTlogo.png" alt="DEVTourism" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="payment-page">
+        <div class="container">
+            <section class="payment-box">
+                <h1>🔒 Secure Payment</h1>
+                <p style="margin-bottom: 1.5rem;">You will be redirected to our secure payment provider.</p>
+
+                <div id="payment-info"
+                    style="background: #f0f4ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border: 2px solid #8fa2ff;">
+                    <h3 style="color: #3a32d1; margin-bottom: 0.5rem;">Order Summary</h3>
+                    <p style="margin: 0.25rem 0;"><strong>Package:</strong> <span id="package-name">Travel
+                            Package</span></p>
+                    <p style="margin: 0.25rem 0;"><strong>Amount:</strong> <span id="amount"
+                            style="color: #3a32d1; font-size: 1.3rem; font-weight: 700;">£199</span></p>
+                </div>
+
+                <button id="checkout-button" class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                    <span id="button-text">💳 Pay with Stripe</span>
+                    <span id="spinner" style="display: none;">Processing...</span>
+                </button>
+
+                <div style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    <p>🔐 Payments are processed securely by <strong>Stripe</strong></p>
+                    <p style="margin-top: 0.5rem;">Your payment information is encrypted and secure</p>
+                </div>
+
+                <div id="error-message"
+                    style="color: #d32f2f; margin-top: 1rem; display: none; padding: 1rem; background: #ffebee; border-radius: 8px;">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 DEVTourism. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Stripe configuration
+        const STRIPE_PUBLISHABLE_KEY = 'pk_live_51SgmIOFJ7SufhlMYySr7KAofjnIR7Lmyp0F3MER5HRodwsCA7SaD2ymP18fMMsw87hrNKF2NHyTQWUirFQ30aJqT00zDYGEs6B';
+        const STRIPE_PRICE_ID = 'price_1SpaEgFJ7SufhlMYfAJZhnLj';
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+        const checkoutButton = document.getElementById('checkout-button');
+        const errorMessage = document.getElementById('error-message');
+        const buttonText = document.getElementById('button-text');
+        const spinner = document.getElementById('spinner');
+        const urlParams = new URLSearchParams(window.location.search);
+        const packageName = urlParams.get('package') || 'DEVTourism Travel Package';
+
+        checkoutButton.addEventListener('click', async () => {
+            checkoutButton.disabled = true;
+            buttonText.style.display = 'none';
+            spinner.style.display = 'inline';
+
+            try {
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        priceId: STRIPE_PRICE_ID,
+                        packageName: packageName
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Failed to create checkout session');
+                }
+
+                const session = await response.json();
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id
+                });
+
+                if (result.error) {
+                    throw new Error(result.error.message);
+                }
+
+            } catch (error) {
+                console.error('Payment error:', error);
+                errorMessage.textContent = error.message || 'An error occurred. Please check console for details.';
+                errorMessage.style.display = 'block';
+                checkoutButton.disabled = false;
+                buttonText.style.display = 'inline';
+                spinner.style.display = 'none';
+            }
+        });
+
+        // Get package info from URL parameters (if available)
+        const amount = urlParams.get('amount') || '199';
+
+        document.getElementById('package-name').textContent = packageName;
+        document.getElementById('amount').textContent = '£' + amount;
+    </script>
+</body>
+
+</html>

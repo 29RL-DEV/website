@@ -1,0 +1,26 @@
+﻿{
+  "name": "DEVTourism",
+  "version": "1.0.0",
+  "description": "DEVTourism - Travel Booking Website with Stripe Integration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "travel",
+    "tourism",
+    "stripe",
+    "booking"
+  ],
+  "author": "DEVTourism",
+  "license": "MIT",
+  "dependencies": {
+    "stripe": "^14.14.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
