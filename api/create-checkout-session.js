@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
 
     try {
         const { packageName, priceId } = req.body;
-        const STRIPE_PRICE_ID = priceId || 'price_1SpaEgFJ7SufhlMYfAJZhnLj';
+        const STRIPE_PRICE_ID = priceId || 'price_1SzbRlFJ7SufhlMYpvNJA8GD';
         const protocol = req.headers['x-forwarded-proto'] || 'http';
         const host = req.headers.host;
         const baseUrl = `${protocol}://${host}`;
